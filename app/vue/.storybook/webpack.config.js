@@ -3,6 +3,7 @@ const path = require('path');
 const genDefaultConfig = require('@storybook/vue/dist/server/config/defaults/webpack.config.js');
 const svgoConfig = require('../svgo-config.json');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const glob = require('glob');
 
 function resolve (dir) {
     return path.join(__dirname, '..', dir);
@@ -10,6 +11,8 @@ function resolve (dir) {
 
 module.exports = (baseConfig, env) => {
     const config = genDefaultConfig(baseConfig, env);
+
+    config.entry.icons = glob.sync(path.resolve(__dirname, '../src/assets/svg-icons/**/*.svg'));
 
     config.module.rules.push({
         test:    /\.scss$/,
