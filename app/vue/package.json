@@ -91,6 +91,7 @@
     "svg-sprite-injector": "^1.0.0",
     "svg-sprite-loader": "^3.4.1",
     "svgo": "^1.0.3",
+    "svgo-loader": "^2.1.0",
     "vue": "^2.5.8",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.8"
